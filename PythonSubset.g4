@@ -14,7 +14,7 @@ assignment: IDENTIFIER ASSIGN expr
           | IDENTIFIER compoundAssign expr;
 
 // if, elif, else statements
-ifStatement: IF expr ':' (statement)+ (ELIF expr ':' statement+)* (ELSE ':' statement+)?;
+ifStatement: IF expr ':' (assignment)+ (ELIF expr ':' assignment+)* (ELSE ':' assignment+)?;
 
 // Expressions
 expr: '(' expr ')'

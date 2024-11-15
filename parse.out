@@ -1,0 +1,342 @@
+program
+├── statement
+│   └── assignment
+│       ├── assign1
+│       ├── =
+│       └── expr
+│           └── "20"
+├── statement
+│   └── assignment
+│       ├── assign2
+│       ├── =
+│       └── expr
+│           └── 123
+├── statement
+│   └── assignment
+│       ├── assign3
+│       ├── =
+│       └── expr
+│           └── 1.23
+├── statement
+│   └── assignment
+│       ├── assign4
+│       ├── =
+│       └── expr
+│           └── assign1
+├── statement
+│   └── assignment
+│       ├── arith_op1
+│       ├── =
+│       └── expr
+│           ├── expr
+│           │   └── 1
+│           ├── +
+│           └── expr
+│               └── 2
+├── statement
+│   └── assignment
+│       ├── arith_op2
+│       ├── =
+│       └── expr
+│           ├── expr
+│           │   └── 13
+│           ├── -
+│           └── expr
+│               └── 3
+├── statement
+│   └── assignment
+│       ├── arith_op3
+│       ├── =
+│       └── expr
+│           ├── expr
+│           │   └── 10
+│           ├── /
+│           └── expr
+│               └── arith_op1
+├── statement
+│   └── assignment
+│       ├── arith_op4
+│       ├── =
+│       └── expr
+│           ├── expr
+│           │   └── 4.2
+│           ├── *
+│           └── expr
+│               └── 10
+├── statement
+│   └── assignment
+│       ├── arith_op5
+│       ├── =
+│       └── expr
+│           ├── expr
+│           │   └── arith_op1
+│           ├── %
+│           └── expr
+│               └── arith_op2
+├── statement
+│   └── assignment
+│       ├── arith_op1
+│       ├── compoundAssign
+│       │   └── +=
+│       └── expr
+│           └── arith_op2
+├── statement
+│   └── assignment
+│       ├── arith_op2
+│       ├── compoundAssign
+│       │   └── -=
+│       └── expr
+│           └── arith_op3
+├── statement
+│   └── assignment
+│       ├── arith_op3
+│       ├── compoundAssign
+│       │   └── *=
+│       └── expr
+│           └── arith_op4
+├── statement
+│   └── assignment
+│       ├── arith_op4
+│       ├── compoundAssign
+│       │   └── /=
+│       └── expr
+│           └── arith_op5
+├── statement
+│   └── assignment
+│       ├── array1
+│       ├── =
+│       └── expr
+│           └── array
+│               ├── [
+│               ├── expr
+│               │   └── 1
+│               ├── ,
+│               ├── expr
+│               │   └── 2
+│               ├── ,
+│               ├── expr
+│               │   └── 3
+│               ├── ,
+│               ├── expr
+│               │   └── 4
+│               ├── ,
+│               ├── expr
+│               │   └── 5
+│               └── ]
+├── statement
+│   └── assignment
+│       ├── array2
+│       ├── =
+│       └── expr
+│           └── array
+│               ├── [
+│               ├── expr
+│               │   └── 'a'
+│               ├── ,
+│               ├── expr
+│               │   └── 'b'
+│               ├── ,
+│               ├── expr
+│               │   └── 'c'
+│               └── ]
+├── statement
+│   └── assignment
+│       ├── array3
+│       ├── =
+│       └── expr
+│           └── array
+│               ├── [
+│               ├── expr
+│               │   └── 1.6
+│               ├── ,
+│               ├── expr
+│               │   └── 2.7
+│               ├── ,
+│               ├── expr
+│               │   └── 3.8
+│               ├── ,
+│               ├── expr
+│               │   └── 4.9
+│               ├── ,
+│               ├── expr
+│               │   └── 5.0
+│               └── ]
+├── statement
+│   └── assignment
+│       ├── var1
+│       ├── =
+│       └── expr
+│           └── 10
+├── statement
+│   └── assignment
+│       ├── var2
+│       ├── =
+│       └── expr
+│           ├── expr
+│           │   ├── expr
+│           │   │   └── var1
+│           │   ├── /
+│           │   └── expr
+│           │       └── 2
+│           ├── +
+│           └── expr
+│               └── 5
+├── statement
+│   └── assignment
+│       ├── var3
+│       ├── =
+│       └── expr
+│           ├── expr
+│           │   └── var2
+│           ├── %
+│           └── expr
+│               └── 2
+├── statement
+│   └── assignment
+│       ├── var4
+│       ├── =
+│       └── expr
+│           └── 1
+├── statement
+│   └── assignment
+│       ├── flag
+│       ├── =
+│       └── expr
+│           └── True
+├── statement
+│   └── assignment
+│       ├── assign1
+│       ├── =
+│       └── expr
+│           └── ""
+├── statement
+│   └── ifStatement
+│       ├── if
+│       ├── expr
+│       │   ├── expr
+│       │   │   └── var1
+│       │   ├── >
+│       │   └── expr
+│       │       └── var2
+│       ├── :
+│       ├── assignment
+│       │   ├── arith_op1
+│       │   ├── =
+│       │   └── expr
+│       │       ├── expr
+│       │       │   └── 1
+│       │       ├── +
+│       │       └── expr
+│       │           └── 2
+│       └── assignment
+│           ├── assign1
+│           ├── =
+│           └── expr
+│               └── "text data"
+├── statement
+│   └── ifStatement
+│       ├── if
+│       ├── expr
+│       │   ├── expr
+│       │   │   ├── expr
+│       │   │   │   ├── expr
+│       │   │   │   │   └── var1
+│       │   │   │   ├── <=
+│       │   │   │   └── expr
+│       │   │   │       └── var2
+│       │   │   ├── and
+│       │   │   └── expr
+│       │   │       └── var3
+│       │   ├── ==
+│       │   └── expr
+│       │       └── var4
+│       ├── :
+│       ├── assignment
+│       │   ├── arith_op1
+│       │   ├── =
+│       │   └── expr
+│       │       ├── expr
+│       │       │   └── 1
+│       │       ├── +
+│       │       └── expr
+│       │           └── 2
+│       ├── assignment
+│       │   ├── assign1
+│       │   ├── =
+│       │   └── expr
+│       │       └── "text data"
+│       ├── else
+│       ├── :
+│       ├── assignment
+│       │   ├── arith_op4
+│       │   ├── =
+│       │   └── expr
+│       │       ├── expr
+│       │       │   └── 4.2
+│       │       ├── *
+│       │       └── expr
+│       │           └── 10
+│       ├── assignment
+│       │   ├── arith_op3
+│       │   ├── compoundAssign
+│       │   │   └── *=
+│       │   └── expr
+│       │       └── arith_op4
+│       └── assignment
+│           ├── data
+│           ├── =
+│           └── expr
+│               └── 0
+├── statement
+│   └── ifStatement
+│       ├── if
+│       ├── expr
+│       │   ├── expr
+│       │   │   ├── expr
+│       │   │   │   ├── expr
+│       │   │   │   │   └── var1
+│       │   │   │   ├── !=
+│       │   │   │   └── expr
+│       │   │   │       └── var2
+│       │   │   ├── or
+│       │   │   └── expr
+│       │   │       └── var3
+│       │   ├── >=
+│       │   └── expr
+│       │       └── var4
+│       ├── :
+│       ├── assignment
+│       │   ├── flag
+│       │   ├── =
+│       │   └── expr
+│       │       └── True
+│       ├── elif
+│       ├── expr
+│       │   ├── expr
+│       │   │   ├── expr
+│       │   │   │   ├── (
+│       │   │   │   ├── expr
+│       │   │   │   │   ├── not
+│       │   │   │   │   └── expr
+│       │   │   │   │       └── flag
+│       │   │   │   └── )
+│       │   │   ├── and
+│       │   │   └── expr
+│       │   │       └── var3
+│       │   ├── >
+│       │   └── expr
+│       │       └── 10
+│       ├── :
+│       ├── assignment
+│       │   ├── flag
+│       │   ├── =
+│       │   └── expr
+│       │       └── False
+│       ├── else
+│       ├── :
+│       └── assignment
+│           ├── data
+│           ├── =
+│           └── expr
+│               └── -1
+└── <EOF>

@@ -27,12 +27,12 @@ def serializedATN():
         0,0,0,26,27,5,34,0,0,27,28,5,30,0,0,28,34,3,8,4,0,29,30,5,34,0,0,
         30,31,3,10,5,0,31,32,3,8,4,0,32,34,1,0,0,0,33,26,1,0,0,0,33,29,1,
         0,0,0,34,5,1,0,0,0,35,36,5,27,0,0,36,37,3,8,4,0,37,39,5,1,0,0,38,
-        40,3,2,1,0,39,38,1,0,0,0,40,41,1,0,0,0,41,39,1,0,0,0,41,42,1,0,0,
+        40,3,4,2,0,39,38,1,0,0,0,40,41,1,0,0,0,41,39,1,0,0,0,41,42,1,0,0,
         0,42,53,1,0,0,0,43,44,5,29,0,0,44,45,3,8,4,0,45,47,5,1,0,0,46,48,
-        3,2,1,0,47,46,1,0,0,0,48,49,1,0,0,0,49,47,1,0,0,0,49,50,1,0,0,0,
+        3,4,2,0,47,46,1,0,0,0,48,49,1,0,0,0,49,47,1,0,0,0,49,50,1,0,0,0,
         50,52,1,0,0,0,51,43,1,0,0,0,52,55,1,0,0,0,53,51,1,0,0,0,53,54,1,
         0,0,0,54,63,1,0,0,0,55,53,1,0,0,0,56,57,5,28,0,0,57,59,5,1,0,0,58,
-        60,3,2,1,0,59,58,1,0,0,0,60,61,1,0,0,0,61,59,1,0,0,0,61,62,1,0,0,
+        60,3,4,2,0,59,58,1,0,0,0,60,61,1,0,0,0,61,59,1,0,0,0,61,62,1,0,0,
         0,62,64,1,0,0,0,63,56,1,0,0,0,63,64,1,0,0,0,64,7,1,0,0,0,65,66,6,
         4,-1,0,66,67,5,2,0,0,67,68,3,8,4,0,68,69,5,3,0,0,69,79,1,0,0,0,70,
         79,7,0,0,0,71,79,5,31,0,0,72,79,5,32,0,0,73,79,5,33,0,0,74,79,5,
@@ -352,11 +352,11 @@ class PythonSubsetParser ( Parser ):
                 return self.getTypedRuleContext(PythonSubsetParser.ExprContext,i)
 
 
-        def statement(self, i:int=None):
+        def assignment(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(PythonSubsetParser.StatementContext)
+                return self.getTypedRuleContexts(PythonSubsetParser.AssignmentContext)
             else:
-                return self.getTypedRuleContext(PythonSubsetParser.StatementContext,i)
+                return self.getTypedRuleContext(PythonSubsetParser.AssignmentContext,i)
 
 
         def ELIF(self, i:int=None):
@@ -386,6 +386,7 @@ class PythonSubsetParser ( Parser ):
 
         localctx = PythonSubsetParser.IfStatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_ifStatement)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 35
@@ -400,7 +401,7 @@ class PythonSubsetParser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
                     self.state = 38
-                    self.statement()
+                    self.assignment()
 
                 else:
                     raise NoViableAltException(self)
@@ -410,37 +411,36 @@ class PythonSubsetParser ( Parser ):
 
             self.state = 53
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
-                    self.state = 43
-                    self.match(PythonSubsetParser.ELIF)
-                    self.state = 44
-                    self.expr(0)
-                    self.state = 45
-                    self.match(PythonSubsetParser.T__0)
-                    self.state = 47 
-                    self._errHandler.sync(self)
-                    _alt = 1
-                    while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                        if _alt == 1:
-                            self.state = 46
-                            self.statement()
+            _la = self._input.LA(1)
+            while _la==29:
+                self.state = 43
+                self.match(PythonSubsetParser.ELIF)
+                self.state = 44
+                self.expr(0)
+                self.state = 45
+                self.match(PythonSubsetParser.T__0)
+                self.state = 47 
+                self._errHandler.sync(self)
+                _alt = 1
+                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                    if _alt == 1:
+                        self.state = 46
+                        self.assignment()
 
-                        else:
-                            raise NoViableAltException(self)
-                        self.state = 49 
-                        self._errHandler.sync(self)
-                        _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
-             
+                    else:
+                        raise NoViableAltException(self)
+                    self.state = 49 
+                    self._errHandler.sync(self)
+                    _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
+
                 self.state = 55
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
+                _la = self._input.LA(1)
 
             self.state = 63
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
-            if la_ == 1:
+            _la = self._input.LA(1)
+            if _la==28:
                 self.state = 56
                 self.match(PythonSubsetParser.ELSE)
                 self.state = 57
@@ -451,7 +451,7 @@ class PythonSubsetParser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt == 1:
                         self.state = 58
-                        self.statement()
+                        self.assignment()
 
                     else:
                         raise NoViableAltException(self)
