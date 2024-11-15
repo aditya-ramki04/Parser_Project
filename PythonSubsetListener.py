@@ -1,6 +1,6 @@
-# Generated from PythonSubset.g4 by ANTLR 4.9.2
+# Generated from PythonSubset.g4 by ANTLR 4.13.2
 from antlr4 import *
-if __name__ is not None and "." in __name__:
+if "." in __name__:
     from .PythonSubsetParser import PythonSubsetParser
 else:
     from PythonSubsetParser import PythonSubsetParser
@@ -32,6 +32,15 @@ class PythonSubsetListener(ParseTreeListener):
 
     # Exit a parse tree produced by PythonSubsetParser#assignment.
     def exitAssignment(self, ctx:PythonSubsetParser.AssignmentContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#ifStatement.
+    def enterIfStatement(self, ctx:PythonSubsetParser.IfStatementContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#ifStatement.
+    def exitIfStatement(self, ctx:PythonSubsetParser.IfStatementContext):
         pass
 
 
