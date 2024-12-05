@@ -1,4 +1,4 @@
-# Generated from PythonSubset.g4 by ANTLR 4.13.2
+# Generated from PythonSubset.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .PythonSubsetParser import PythonSubsetParser
@@ -26,6 +26,24 @@ class PythonSubsetListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PythonSubsetParser#simpleStatement.
+    def enterSimpleStatement(self, ctx:PythonSubsetParser.SimpleStatementContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#simpleStatement.
+    def exitSimpleStatement(self, ctx:PythonSubsetParser.SimpleStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#compoundStatement.
+    def enterCompoundStatement(self, ctx:PythonSubsetParser.CompoundStatementContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#compoundStatement.
+    def exitCompoundStatement(self, ctx:PythonSubsetParser.CompoundStatementContext):
+        pass
+
+
     # Enter a parse tree produced by PythonSubsetParser#assignment.
     def enterAssignment(self, ctx:PythonSubsetParser.AssignmentContext):
         pass
@@ -41,6 +59,42 @@ class PythonSubsetListener(ParseTreeListener):
 
     # Exit a parse tree produced by PythonSubsetParser#ifStatement.
     def exitIfStatement(self, ctx:PythonSubsetParser.IfStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#whileStatement.
+    def enterWhileStatement(self, ctx:PythonSubsetParser.WhileStatementContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#whileStatement.
+    def exitWhileStatement(self, ctx:PythonSubsetParser.WhileStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#forStatement.
+    def enterForStatement(self, ctx:PythonSubsetParser.ForStatementContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#forStatement.
+    def exitForStatement(self, ctx:PythonSubsetParser.ForStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#suite.
+    def enterSuite(self, ctx:PythonSubsetParser.SuiteContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#suite.
+    def exitSuite(self, ctx:PythonSubsetParser.SuiteContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#condition.
+    def enterCondition(self, ctx:PythonSubsetParser.ConditionContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#condition.
+    def exitCondition(self, ctx:PythonSubsetParser.ConditionContext):
         pass
 
 
