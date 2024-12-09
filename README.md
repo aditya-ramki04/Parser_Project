@@ -28,7 +28,9 @@ The final submission will be uploaded as a ZIP file and GitHub repository link f
 2. **Install Required Tools**  
    - **Java JDK 8 or higher** (required for running ANTLR).  
    - **Python 3.x** (for testing the parser).  
-   - **ANTLR Python Runtime**:  
+   - **ANTLR Python Runtime**:
+   - **Graphviz** (to generate SVG of parse tree):
+
      ```bash
      pip install antlr4-python3-runtime
      ```
@@ -42,7 +44,7 @@ The final submission will be uploaded as a ZIP file and GitHub repository link f
 4. **Generate the Lexer and Parser Files**  
    - Run the following command to generate the parser and lexer from the grammar file:  
      ```bash
-     antlr4 -Dlanguage=Python3 -visitor -listener PythonSubset.g4
+     antlr4 -Dlanguage=Python3 PythonSubset.g4
      ```
 
 5. **Run the Parser**  
@@ -64,34 +66,23 @@ Ensure that your **PATH** variable includes the directory where `antlr4` is inst
 ## **How to Use/Run the Parser**
 
 1. **Input Your Python Code**  
-   - Create a Python script (e.g., `example.py`) containing the following:  
-     ```python
-     if x > 10:
-         print("x is greater than 10")
-     else:
-         print("x is 10 or less")
-     ```
+   -The code to test is in 'test_parser.py' for the final Deliverable
 
 2. **Run the Parser**  
    - Execute the following command to parse the file:  
      ```bash
-     python3 main.py example.py
+     python3 test_parser.py
      ```
 
 3. **View Parse Tree Output**  
    - The output will display a parse tree with nodes corresponding to the if, elif, and else blocks, as well as arithmetic, assignment, and loop structures.  
    - Any errors or missing indentation will also be displayed.  
 
-4. **Test the Parser**  
-   - Use the provided test files and ensure that all cases (valid and invalid) are correctly parsed.  
 
 ---
 
 ## **Project Demo**
 [Link to Video Demo](https://your-link-to-demo-video.com)  
 
-This demo provides a full walkthrough of setting up the project, running the parser, and interpreting the parse tree output. It also highlights how to handle errors related to indentation and syntax.  
 
 ---
-
-If you have any questions or encounter issues, please feel free to reach out to the team via GitHub issues or email.  
