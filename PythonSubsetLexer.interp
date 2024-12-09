@@ -1,5 +1,6 @@
 token literal names:
 null
+':'
 '('
 ')'
 ','
@@ -40,12 +41,6 @@ null
 null
 null
 null
-null
-null
-null
-null
-'INDENT'
-'DEDENT'
 null
 null
 
@@ -94,10 +89,6 @@ COMMENT
 MULTILINE_COMMENT
 NEWLINE
 WS
-INDENT
-DEDENT
-COMMENT
-LINE_JOINING
 
 rule names:
 T__0
@@ -143,10 +134,6 @@ COMMENT
 MULTILINE_COMMENT
 NEWLINE
 WS
-INDENT
-DEDENT
-COMMENT
-LINE_JOINING
 
 channel names:
 DEFAULT_TOKEN_CHANNEL

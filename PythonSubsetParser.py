@@ -1,5 +1,4 @@
 # Generated from PythonSubset.g4 by ANTLR 4.13.1
-# Generated from PythonSubset.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -171,7 +170,6 @@ class PythonSubsetParser ( Parser ):
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.13.1")
-        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -318,8 +316,8 @@ class PythonSubsetParser ( Parser ):
             return self.getTypedRuleContext(PythonSubsetParser.AssignmentContext,0)
 
 
-        def NEWLINE(self):
-            return self.getToken(PythonSubsetParser.NEWLINE, 0)
+        def expr(self):
+            return self.getTypedRuleContext(PythonSubsetParser.ExprContext,0)
 
 
         def COMMENT(self):
@@ -854,262 +852,6 @@ class PythonSubsetParser ( Parser ):
         return localctx
 
 
-    class WhileStatementContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def WHILE(self):
-            return self.getToken(PythonSubsetParser.WHILE, 0)
-
-        def condition(self):
-            return self.getTypedRuleContext(PythonSubsetParser.ConditionContext,0)
-
-
-        def COLON(self):
-            return self.getToken(PythonSubsetParser.COLON, 0)
-
-        def suite(self):
-            return self.getTypedRuleContext(PythonSubsetParser.SuiteContext,0)
-
-
-        def getRuleIndex(self):
-            return PythonSubsetParser.RULE_whileStatement
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterWhileStatement" ):
-                listener.enterWhileStatement(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitWhileStatement" ):
-                listener.exitWhileStatement(self)
-
-
-
-
-    def whileStatement(self):
-
-        localctx = PythonSubsetParser.WhileStatementContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_whileStatement)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 87
-            self.match(PythonSubsetParser.WHILE)
-            self.state = 88
-            self.condition()
-            self.state = 89
-            self.match(PythonSubsetParser.COLON)
-            self.state = 90
-            self.suite()
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class ForStatementContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def FOR(self):
-            return self.getToken(PythonSubsetParser.FOR, 0)
-
-        def IDENTIFIER(self):
-            return self.getToken(PythonSubsetParser.IDENTIFIER, 0)
-
-        def IN(self):
-            return self.getToken(PythonSubsetParser.IN, 0)
-
-        def expr(self):
-            return self.getTypedRuleContext(PythonSubsetParser.ExprContext,0)
-
-
-        def COLON(self):
-            return self.getToken(PythonSubsetParser.COLON, 0)
-
-        def suite(self):
-            return self.getTypedRuleContext(PythonSubsetParser.SuiteContext,0)
-
-
-        def getRuleIndex(self):
-            return PythonSubsetParser.RULE_forStatement
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterForStatement" ):
-                listener.enterForStatement(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitForStatement" ):
-                listener.exitForStatement(self)
-
-
-
-
-    def forStatement(self):
-
-        localctx = PythonSubsetParser.ForStatementContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_forStatement)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 92
-            self.match(PythonSubsetParser.FOR)
-            self.state = 93
-            self.match(PythonSubsetParser.IDENTIFIER)
-            self.state = 94
-            self.match(PythonSubsetParser.IN)
-            self.state = 95
-            self.expr(0)
-            self.state = 96
-            self.match(PythonSubsetParser.COLON)
-            self.state = 97
-            self.suite()
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class SuiteContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def simpleStatement(self):
-            return self.getTypedRuleContext(PythonSubsetParser.SimpleStatementContext,0)
-
-
-        def NEWLINE(self):
-            return self.getToken(PythonSubsetParser.NEWLINE, 0)
-
-        def INDENT(self):
-            return self.getToken(PythonSubsetParser.INDENT, 0)
-
-        def DEDENT(self):
-            return self.getToken(PythonSubsetParser.DEDENT, 0)
-
-        def statement(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(PythonSubsetParser.StatementContext)
-            else:
-                return self.getTypedRuleContext(PythonSubsetParser.StatementContext,i)
-
-
-        def getRuleIndex(self):
-            return PythonSubsetParser.RULE_suite
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSuite" ):
-                listener.enterSuite(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSuite" ):
-                listener.exitSuite(self)
-
-
-
-
-    def suite(self):
-
-        localctx = PythonSubsetParser.SuiteContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_suite)
-        self._la = 0 # Token type
-        try:
-            self.state = 109
-            self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [1, 18, 21, 22, 25, 34, 35, 36, 37]:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 99
-                self.simpleStatement()
-                pass
-            elif token in [38]:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 100
-                self.match(PythonSubsetParser.NEWLINE)
-                self.state = 101
-                self.match(PythonSubsetParser.INDENT)
-                self.state = 103 
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                while True:
-                    self.state = 102
-                    self.statement()
-                    self.state = 105 
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 259415867394) != 0)):
-                        break
-
-                self.state = 107
-                self.match(PythonSubsetParser.DEDENT)
-                pass
-            else:
-                raise NoViableAltException(self)
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class ConditionContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def expr(self):
-            return self.getTypedRuleContext(PythonSubsetParser.ExprContext,0)
-
-
-        def getRuleIndex(self):
-            return PythonSubsetParser.RULE_condition
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondition" ):
-                listener.enterCondition(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondition" ):
-                listener.exitCondition(self)
-
-
-
-
-    def condition(self):
-
-        localctx = PythonSubsetParser.ConditionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_condition)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 111
-            self.expr(0)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
     class ExprContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -1540,7 +1282,6 @@ class PythonSubsetParser ( Parser ):
     def array(self):
 
         localctx = PythonSubsetParser.ArrayContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_array)
         self.enterRule(localctx, 24, self.RULE_array)
         self._la = 0 # Token type
         try:
