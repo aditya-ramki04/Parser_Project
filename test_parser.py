@@ -171,6 +171,7 @@ while True:
             token_type = safe_get_token_type(lexer, token)
             line_num = token.line
             col_num = token.column
+            print(f"Line {line_num}:{col_num} - Type: {token_type}, Text: '{token.text}'")
         
         # Reset lexer for parsing
         lexer.reset()
@@ -189,6 +190,46 @@ while True:
         print(f"Error during parsing: {str(e)}")
         import traceback
         traceback.print_exc()
+
+    # Generate a DOT representation of the tree
+    dot_representation = to_dot(tree, parser)
+
+    # Save as .dot file
+    with open("./dot/tree.dot", "w") as dot_file:
+        dot_file.write(dot_representation)
+
+def to_dot(tree, parser):
+    """Converts the parse tree to DOT format for Graphviz."""
+    ruleNames = parser.ruleNames  # Retrieve rule names from the parser
+
+    def escape_label(label):
+        """Escape labels for Graphviz."""
+        return label.replace('"', '\\"')
+
+    def get_node_text(node, ruleNames):
+        """Get text for the current node."""
+        if isinstance(node, TerminalNode):
+            # Leaf nodes (tokens)
+            return escape_label(node.getText())
+        elif isinstance(node, ParserRuleContext):
+            # Internal nodes (rules)
+            return escape_label(ruleNames[node.getRuleIndex()])
+        return escape_label(str(node))
+
+    def build_dot(node, ruleNames, node_id, result):
+        """Build the DOT graph recursively."""
+        label = get_node_text(node, ruleNames)
+        result.append(f'  {node_id} [label="{label}"];')
+        child_id = node_id + 1
+        for i in range(node.getChildCount()):
+            result.append(f'  {node_id} -> {child_id};')
+            child_id = build_dot(node.getChild(i), ruleNames, child_id, result)
+        return child_id
+
+    result = ['digraph G {', '  rankdir=TB;']
+    build_dot(tree, ruleNames, 0, result)
+    result.append('}')
+    return "\n".join(result)
 
 if __name__ == "__main__":
     main()
