@@ -75,8 +75,12 @@ Ensure that your **PATH** variable includes the directory where `antlr4` is inst
      ```
 
 3. **View Parse Tree Output**  
-   - The output will display a parse tree with nodes corresponding to the if, elif, and else blocks, as well as arithmetic, assignment, and loop structures.  
-   - Any errors or missing indentation will also be displayed.  
+   - The output will display a parse tree with nodes corresponding to the if, elif, and else blocks, as well as arithmetic, assignment, and loop structures.
+   - Any errors or missing indentation will also be displayed.
+   - To view the SVG of the parse tree, execute the following command in the dot folder:
+     ```bash
+     dot -Tsvg tree.dot -o tree.svg
+     ```
 
 
 ---
