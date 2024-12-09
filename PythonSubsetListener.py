@@ -1,4 +1,4 @@
-# Generated from PythonSubset.g4 by ANTLR 4.13.2
+# Generated from PythonSubset.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .PythonSubsetParser import PythonSubsetParser
@@ -17,12 +17,66 @@ class PythonSubsetListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PythonSubsetParser#statement.
-    def enterStatement(self, ctx:PythonSubsetParser.StatementContext):
+    # Enter a parse tree produced by PythonSubsetParser#stmt.
+    def enterStmt(self, ctx:PythonSubsetParser.StmtContext):
         pass
 
-    # Exit a parse tree produced by PythonSubsetParser#statement.
-    def exitStatement(self, ctx:PythonSubsetParser.StatementContext):
+    # Exit a parse tree produced by PythonSubsetParser#stmt.
+    def exitStmt(self, ctx:PythonSubsetParser.StmtContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#simpleStmt.
+    def enterSimpleStmt(self, ctx:PythonSubsetParser.SimpleStmtContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#simpleStmt.
+    def exitSimpleStmt(self, ctx:PythonSubsetParser.SimpleStmtContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#compoundStmt.
+    def enterCompoundStmt(self, ctx:PythonSubsetParser.CompoundStmtContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#compoundStmt.
+    def exitCompoundStmt(self, ctx:PythonSubsetParser.CompoundStmtContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#if_stmt.
+    def enterIf_stmt(self, ctx:PythonSubsetParser.If_stmtContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#if_stmt.
+    def exitIf_stmt(self, ctx:PythonSubsetParser.If_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#while_stmt.
+    def enterWhile_stmt(self, ctx:PythonSubsetParser.While_stmtContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#while_stmt.
+    def exitWhile_stmt(self, ctx:PythonSubsetParser.While_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#for_stmt.
+    def enterFor_stmt(self, ctx:PythonSubsetParser.For_stmtContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#for_stmt.
+    def exitFor_stmt(self, ctx:PythonSubsetParser.For_stmtContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#suite.
+    def enterSuite(self, ctx:PythonSubsetParser.SuiteContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#suite.
+    def exitSuite(self, ctx:PythonSubsetParser.SuiteContext):
         pass
 
 
@@ -35,15 +89,6 @@ class PythonSubsetListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PythonSubsetParser#ifStatement.
-    def enterIfStatement(self, ctx:PythonSubsetParser.IfStatementContext):
-        pass
-
-    # Exit a parse tree produced by PythonSubsetParser#ifStatement.
-    def exitIfStatement(self, ctx:PythonSubsetParser.IfStatementContext):
-        pass
-
-
     # Enter a parse tree produced by PythonSubsetParser#expr.
     def enterExpr(self, ctx:PythonSubsetParser.ExprContext):
         pass
@@ -53,12 +98,21 @@ class PythonSubsetListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PythonSubsetParser#compoundAssign.
-    def enterCompoundAssign(self, ctx:PythonSubsetParser.CompoundAssignContext):
+    # Enter a parse tree produced by PythonSubsetParser#atom.
+    def enterAtom(self, ctx:PythonSubsetParser.AtomContext):
         pass
 
-    # Exit a parse tree produced by PythonSubsetParser#compoundAssign.
-    def exitCompoundAssign(self, ctx:PythonSubsetParser.CompoundAssignContext):
+    # Exit a parse tree produced by PythonSubsetParser#atom.
+    def exitAtom(self, ctx:PythonSubsetParser.AtomContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#functionCall.
+    def enterFunctionCall(self, ctx:PythonSubsetParser.FunctionCallContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#functionCall.
+    def exitFunctionCall(self, ctx:PythonSubsetParser.FunctionCallContext):
         pass
 
 
@@ -68,6 +122,15 @@ class PythonSubsetListener(ParseTreeListener):
 
     # Exit a parse tree produced by PythonSubsetParser#array.
     def exitArray(self, ctx:PythonSubsetParser.ArrayContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonSubsetParser#compoundAssign.
+    def enterCompoundAssign(self, ctx:PythonSubsetParser.CompoundAssignContext):
+        pass
+
+    # Exit a parse tree produced by PythonSubsetParser#compoundAssign.
+    def exitCompoundAssign(self, ctx:PythonSubsetParser.CompoundAssignContext):
         pass
 
 
