@@ -11,10 +11,10 @@ The final submission will be uploaded as a ZIP file and GitHub repository link f
 ---
 
 ## **Team Members**
-- **[Aditya Ramakrishnan]** 
-- **[Jack Scanlan]** 
-- **[Sam Mallet]**
-- **[Ty Hastings]** 
+- **Aditya Ramakrishnan** 
+- **Jack Scanlan** 
+- **Sam Mallet**
+- **Ty Hastings** 
 
 ---
 
