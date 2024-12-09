@@ -4,34 +4,26 @@ grammar PythonSubset;
 program: statement+ EOF;
 
 // Statements
-statement: simpleStatement NEWLINE
-    | compoundStatement
-    ;
-
-simpleStatement: assignment
-    | expr
-    ;
-
-compoundStatement: ifStatement
-    | whileStatement
-    | forStatement
-    ;
+statement: com
+         | assignment
+         | expr
+         | ifStatement
+         | whileLoop
+         | forLoop
+         ;
 
 // Assignment
 assignment: IDENTIFIER ASSIGN expr
           | IDENTIFIER compoundAssign expr;
 
-// Control Structures
-ifStatement: IF expr ':' (assignment)+ (ELIF expr ':' assignment+)* (ELSE ':' assignment+)?;
+// if, elif, else statements
+ifStatement: IF expr ':' (statement)+ (ELIF expr ':' statement+)* (ELSE ':' assignment+)*;
 
-whileStatement: WHILE condition COLON suite;
+// while loops
+whileLoop: WHILE expr ':' (statement)+;
 
-forStatement: FOR IDENTIFIER IN expr COLON suite;
-
-suite: simpleStatement
-    | NEWLINE INDENT statement+ DEDENT;
-
-condition: expr;
+// for loops
+forLoop: FOR IDENTIFIER IN (expr | 'range') ':' (statement)+;
 
 // Expressions
 expr: '(' expr ')'
@@ -47,7 +39,7 @@ expr: '(' expr ')'
     | NOT expr
     ;
 
-
+com : COMMENT | BLOCK_COMMENT ;
 
 compoundAssign: '+=' | '-=' | '*=' | '/=';
 
@@ -65,18 +57,14 @@ IF: 'if';
 ELSE: 'else';
 ELIF: 'elif';
 WHILE: 'while';
-FOR: 'for';             
-IN: 'in';                
-COLON: ':'; 
+FOR: 'for';
+IN: 'in';
 ASSIGN: '=';
 INT: '-'?[0-9]+;
 FLOAT: '-'?[0-9]+ '.' [0-9]+;
 STRING: '\'' .*? '\'' | '"' .*? '"';
 IDENTIFIER: [a-zA-Z_][a-zA-Z_0-9]*;
-NEWLINE: ('\r'? '\n' | '\r') SPACES?;
-SPACES: [ \t]+;
-WS: [ \t]+ -> skip;
-INDENT: 'INDENT' -> skip;
-DEDENT: 'DEDENT' -> skip;
+WS: [ \t\r\n]+ -> skip;
 COMMENT: '#' ~[\r\n]* -> skip;
-LINE_JOINING: '\\' NEWLINE -> skip;
+BLOCK_COMMENT : '\'\'\'' ( . | '\r' | '\n' )*? '\'\'\''
+        -> channel(HIDDEN) ;
